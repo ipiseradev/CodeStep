@@ -40,8 +40,6 @@ export default function Landing() {
             animate="visible"
             className="flex flex-col items-start text-left"
           >
-
-
             <motion.h1
               variants={itemVariants}
               className="text-5xl md:text-6xl xl:text-[4.8rem] font-black tracking-[-0.07em] leading-[0.9] uppercase italic text-white mb-5"
@@ -58,15 +56,16 @@ export default function Landing() {
               variants={itemVariants}
               className="text-base md:text-lg text-zinc-400 mb-9 leading-relaxed max-w-[470px] font-medium"
             >
-              Aprendé a programar con misiones cortas,
-              feedback inmediato y progreso real.
+              Aprendé a programar con misiones cortas, feedback inmediato y
+              progreso real.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="w-full sm:w-auto">
-              <Link to="/login" className="block">
-                <AnimatedButton className="w-full sm:min-w-[250px] h-15 md:h-16 text-sm md:text-base group">
-                  Entrar a la Plataforma
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <motion.div variants={itemVariants}>
+              <Link to="/dashboard">
+                <AnimatedButton className="group inline-flex items-center gap-3">
+                  <Zap className="w-4 h-4 text-primary-500 fill-primary-500" />
+                  <span>ENTRAR A LA PLATAFORMA</span>
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </AnimatedButton>
               </Link>
             </motion.div>
@@ -75,7 +74,11 @@ export default function Landing() {
           <motion.div
             initial={{ opacity: 0, scale: 0.96, x: 24 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1], delay: 0.35 }}
+            transition={{
+              duration: 0.95,
+              ease: [0.16, 1, 0.3, 1],
+              delay: 0.35,
+            }}
             className="relative w-full flex justify-center lg:justify-end"
           >
             <div className="absolute inset-0 bg-primary-500/5 blur-[80px] rounded-3xl" />
