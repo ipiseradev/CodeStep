@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-zinc-100 font-sans antialiased selection:bg-primary-500 selection:text-black;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .glass-card {
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-zinc-500;
+  }
+  
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  .shimmer-bg {
+    @apply relative overflow-hidden;
+  }
+  .shimmer-bg::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer;
+  }
+
+  .nike-btn {
+    @apply px-8 py-3 bg-white text-black font-black uppercase tracking-tighter transition-all duration-200 hover:bg-primary-500 active:scale-95;
+  }
+
+  .ambient-orb {
+    @apply absolute rounded-full blur-[120px] opacity-20 animate-float mix-blend-screen pointer-events-none;
+  }
+}
+
+/* Typography Overrides */
+h1, h2, h3 {
+  @apply tracking-tighter;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #e2fb18; }
+
+/* Custom Syntax Highlighting (Prism Overrides) */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #71717a !important; /* Zinc-400 for better visibility of comments */
+  font-style: italic;
+}
+
+.token.keyword {
+  color: #e2fb18 !important; /* Volt Nike */
+  font-weight: 900;
+}
+
+.token.string,
+.token.attr-value {
+  color: #22d3ee !important; /* Electric Cyan */
+}
+
+.token.number,
+.token.boolean {
+  color: #f472b6 !important; /* Pink/Fuchsia for values */
+}
+
+.token.function {
+  color: #ffffff !important;
+}
+
+.token.operator,
+.token.punctuation {
+  color: #52525b !important; /* Zinc-600 for subtle symbols */
+}
