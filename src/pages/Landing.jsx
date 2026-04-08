@@ -63,9 +63,8 @@ export default function Landing() {
             <motion.div variants={itemVariants}>
               <Link to="/dashboard">
                 <AnimatedButton className="group inline-flex items-center gap-3">
-                  <Zap className="w-4 h-4 text-primary-500 fill-primary-500" />
                   <span>ENTRAR A LA PLATAFORMA</span>
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover:  translate-x-1" />
                 </AnimatedButton>
               </Link>
             </motion.div>

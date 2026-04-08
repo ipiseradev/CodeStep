@@ -12,10 +12,6 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b border-white/[0.05] bg-black/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group shrink-0">
-          <div className="bg-white p-2 transition-transform group-hover:-rotate-6">
-            <Code2 className="w-5 h-5 text-black" />
-          </div>
-
           <span className="font-black text-2xl tracking-[-0.08em] text-white uppercase italic">
             CODE<span className="text-primary-500">STEP</span>
           </span>
