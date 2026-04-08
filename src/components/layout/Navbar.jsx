@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group shrink-0">
           <span className="font-black text-2xl tracking-[-0.08em] text-white uppercase italic">
-            CODE<span className="text-primary-500">STEP</span>
+            CODE<span className="text-primary-650">STEP</span>
           </span>
         </Link>
 

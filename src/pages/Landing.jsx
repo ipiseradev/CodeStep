@@ -49,12 +49,12 @@ export default function Landing() {
               PROGRAMANDO
               <br />
               <span className="text-white">CON </span>
-              <span className="text-primary-500">CODE-STEP</span>
+              <span className="text-primary-650">CODE-STEP</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-lg text-zinc-400 mb-9 leading-relaxed max-w-[470px] font-medium"
+              className="text-base md:text-lg text-zinc-600 mb-9 leading-relaxed max-w-[670px] font-material"
             >
               Aprendé a programar con misiones cortas, feedback inmediato y
               progreso real.
@@ -62,7 +62,7 @@ export default function Landing() {
 
             <motion.div variants={itemVariants}>
               <Link to="/dashboard">
-                <AnimatedButton className="group inline-flex items-center gap-3">
+                <AnimatedButton className="px-6 py-3 bg-white text-black font-black text-xs uppercase tracking-[0.12em] flex items-center gap-3 hover:bg-primary-500 transition-all duration-300">
                   <span>ENTRAR A LA PLATAFORMA</span>
                   <ChevronRight className="w-4 h-4 transition-transform group-hover:  translate-x-1" />
                 </AnimatedButton>
