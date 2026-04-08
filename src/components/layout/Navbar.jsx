@@ -43,11 +43,7 @@ export default function Navbar() {
           )}
 
           <div className="flex items-center gap-4 pl-6 border-l border-white/10">
-            <div className="flex items-center gap-2 bg-zinc-900 border border-white/5 py-1.5 px-3">
-              <Zap className="w-3.5 h-3.5 text-primary-500 fill-primary-500" />
-              <span className="text-sm font-black text-white italic">{xp}</span>
-            </div>
-
+          
             {isHome ? (
               <Link
                 to="/dashboard"
