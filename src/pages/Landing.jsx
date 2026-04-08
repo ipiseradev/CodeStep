@@ -40,13 +40,7 @@ export default function Landing() {
             animate="visible"
             className="flex flex-col items-start text-left"
           >
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-500 font-bold mb-7 tracking-[0.18em] uppercase text-[10px]"
-            >
-              <Zap className="w-3 h-3 fill-primary-500" />
-              <span>Plataforma Para Aprender</span>
-            </motion.div>
+
 
             <motion.h1
               variants={itemVariants}
