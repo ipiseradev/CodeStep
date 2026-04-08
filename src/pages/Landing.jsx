@@ -4,70 +4,98 @@ import { Zap, ChevronRight } from 'lucide-react';
 import AnimatedButton from '../components/ui/AnimatedButton';
 import HeroTerminal from '../components/ui/HeroTerminal';
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
 export default function Landing() {
   return (
-    <div className="w-full min-h-screen bg-black relative overflow-hidden grid-bg noise-overlay">
-      {/* Ambient Orbs */}
-      <div className="ambient-orb w-[500px] h-[500px] bg-white/5 -top-20 -left-20" />
-      <div className="ambient-orb w-[380px] h-[380px] bg-primary-500/5 bottom-0 right-0" />
+    <div className="relative w-full min-h-screen bg-black overflow-hidden grid-bg selection:bg-primary-500/30">
+      <div className="absolute inset-0 noise-overlay opacity-[0.15] pointer-events-none z-[1]" />
 
-      <div className="max-w-[1100px] mx-auto px-6 py-20 md:py-28 lg:py-32 relative z-10 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-16 items-center w-full">
-          {/* Left */}
-          <div className="max-w-[520px]">
+      <div className="absolute -top-24 -left-24 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[100px] pointer-events-none" />
+
+      <main className="relative z-10 container mx-auto min-h-screen flex items-center px-6 md:px-10 lg:px-16">
+        <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center w-full py-20 lg:py-0">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col items-start text-left"
+          >
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-3 px-0 py-2 text-primary-500 font-black mb-8 tracking-[0.2em] uppercase text-xs border-b-2 border-primary-500"
+              variants={itemVariants}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-500 font-bold mb-7 tracking-[0.18em] uppercase text-[10px]"
             >
-              <Zap className="w-4 h-4 fill-primary-500" />
-              <span>Aprende a programar jugando</span>
+              <Zap className="w-3 h-3 fill-primary-500" />
+              <span>Plataforma Para Aprender</span>
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 32 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-6xl xl:text-7xl font-black tracking-[-0.06em] mb-8 leading-[0.9] uppercase italic text-white"
+              variants={itemVariants}
+              className="text-5xl md:text-6xl xl:text-[4.8rem] font-black tracking-[-0.07em] leading-[0.9] uppercase italic text-white mb-5"
             >
-              TU CÓDIGO.
+              APRENDÉ
               <br />
-              SIN LÍMITES.
+              PROGRAMANDO
+              <br />
+              <span className="text-white">CON </span>
+              <span className="text-primary-500">CODE-STEP</span>
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.75 }}
-              className="text-lg md:text-2xl text-zinc-400 mb-12 leading-snug max-w-[480px] font-medium tracking-tight"
+              variants={itemVariants}
+              className="text-base md:text-lg text-zinc-400 mb-9 leading-relaxed max-w-[470px] font-medium"
             >
-              Una plataforma de aprendizaje para practicar programación con desafíos
-              cortos, feedback inmediato y progreso real.
+              Aprendé a programar con misiones cortas,
+              feedback inmediato y progreso real.
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.7 }}
-            >
-              <Link to="/dashboard">
-                <AnimatedButton className="min-w-[280px] h-16 md:h-18 text-lg md:text-xl">
-                  Ir a la plataforma
-                  <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />
+            <motion.div variants={itemVariants} className="w-full sm:w-auto">
+              <Link to="/login" className="block">
+                <AnimatedButton className="w-full sm:min-w-[250px] h-15 md:h-16 text-sm md:text-base group">
+                  Entrar a la Plataforma
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </AnimatedButton>
               </Link>
             </motion.div>
-          </div>
+          </motion.div>
 
-          {/* Right */}
-          <div className="hidden lg:flex justify-end">
-            <div className="w-full max-w-[560px]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, x: 24 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1], delay: 0.35 }}
+            className="relative w-full flex justify-center lg:justify-end"
+          >
+            <div className="absolute inset-0 bg-primary-500/5 blur-[80px] rounded-3xl" />
+
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative z-10 w-full max-w-[540px]"
+            >
               <HeroTerminal />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
