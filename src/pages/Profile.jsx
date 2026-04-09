@@ -65,7 +65,7 @@ export default function Profile() {
               <div className="flex-1">
                 <div className="flex items-center gap-2 text-primary-500 font-black uppercase tracking-[0.28em] text-[10px] mb-4">
                   <div className="w-2 h-2 bg-primary-700" />
-                  Rango #{rank.badge}
+                  Admin
                 </div>
 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white italic uppercase tracking-tighter leading-[0.92]">
