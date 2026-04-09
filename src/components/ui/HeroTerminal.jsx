@@ -44,7 +44,7 @@ const codeLines = [
     type: 'code',
     parts: [
       { text: '  track: ', color: 'text-zinc-400' },
-      { text: '"frontend_dev"', color: 'text-cyan-400' },
+      { text: '"Full Stack Dev"', color: 'text-cyan-400' },
       { text: ',', color: 'text-zinc-500' },
     ],
   },

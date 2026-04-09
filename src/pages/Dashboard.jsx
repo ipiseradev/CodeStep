@@ -98,7 +98,7 @@ export default function Dashboard() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <span className="h-[1px] w-12 bg-primary-500" />
-                <span className="text-[10px] uppercase tracking-[0.5em] text-primary-500 font-black">Resumen de cuenta</span>
+                <span className="text-[10px] uppercase tracking-[0.5em] text-primary-500 font-black">Estadisticas de Tu Cuenta</span>
               </div>
               <h2 className="text-6xl lg:text-7xl font-black italic uppercase tracking-tighter leading-none">
                 Bienvenido, <span className="text-zinc-500">Ignacio</span>
@@ -108,7 +108,7 @@ export default function Dashboard() {
             <div className="flex items-center gap-6 pb-2">
               <div className="text-right">
                 <p className="text-[9px] text-zinc-600 font-bold uppercase tracking-widest mb-1">Estado de cuenta</p>
-                <p className="text-xs font-black text-primary-500 tracking-tighter uppercase">Pro Member</p>
+                <p className="text-xs font-black text-primary-500 tracking-tighter uppercase">Admin</p>
               </div>
               <div className="h-8 w-[1px] bg-white/10" />
               <div className="px-5 py-2 bg-white text-black text-[11px] font-black uppercase tracking-tighter italic">Nivel 04</div>

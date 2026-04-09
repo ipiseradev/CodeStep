@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { ProgressProvider } from './context/ProgressContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-
+import Auth from './pages/Auth';
 // Pages
 import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
@@ -20,6 +20,7 @@ function AnimatedRoutes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/lesson/:id" element={<Lesson />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
     </AnimatePresence>
   );

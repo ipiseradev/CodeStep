@@ -21,8 +21,8 @@ export default function Profile() {
   const navigate = useNavigate();
 
   const getRank = (xp) => {
-    if (xp < 100) return { title: 'CINTURÓN BLANCO', color: 'text-zinc-300', badge: '01' };
-    if (xp < 300) return { title: 'EJECUTOR PRO', color: 'text-white', badge: '02' };
+    if (xp < 100) return { title: 'Ignacio Pisera', color: 'text-zinc-300', badge: '01' };
+    if (xp < 300) return { title: 'Administrador', color: 'text-white', badge: '02' };
     if (xp < 600) return { title: 'ATLETA ELITE', color: 'text-primary-500', badge: '03' };
     return { title: 'HALL OF FAME', color: 'text-primary-500', badge: 'MAX' };
   };
@@ -64,8 +64,8 @@ export default function Profile() {
 
               <div className="flex-1">
                 <div className="flex items-center gap-2 text-primary-500 font-black uppercase tracking-[0.28em] text-[10px] mb-4">
-                  <div className="w-2 h-2 bg-primary-500" />
-                  Reporte oficial de rendimiento
+                  <div className="w-2 h-2 bg-primary-700" />
+                  Rango #{rank.badge}
                 </div>
 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white italic uppercase tracking-tighter leading-[0.92]">
