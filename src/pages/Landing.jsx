@@ -1,6 +1,7 @@
+
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Zap, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import AnimatedButton from '../components/ui/AnimatedButton';
 import HeroTerminal from '../components/ui/HeroTerminal';
 
@@ -26,14 +27,14 @@ const itemVariants = {
 
 export default function Landing() {
   return (
-    <div className="relative w-full min-h-screen bg-black overflow-hidden grid-bg selection:bg-primary-500/30">
-      <div className="absolute inset-0 noise-overlay opacity-[0.15] pointer-events-none z-[1]" />
+    <div className="relative w-full min-h-screen overflow-hidden bg-black grid-bg selection:bg-primary-500/30">
+      <div className="pointer-events-none absolute inset-0 z-[1] noise-overlay opacity-[0.15]" />
 
-      <div className="absolute -top-24 -left-24 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="pointer-events-none absolute -top-24 -left-24 h-[600px] w-[600px] rounded-full bg-white/5 blur-[120px]" />
+      <div className="pointer-events-none absolute right-0 bottom-0 h-[500px] w-[500px] rounded-full bg-primary-500/10 blur-[100px]" />
 
-      <main className="relative z-10 container mx-auto min-h-screen flex items-center px-6 md:px-10 lg:px-16">
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center w-full py-20 lg:py-0">
+      <main className="relative z-10 container mx-auto flex min-h-screen items-center px-6 md:px-10 lg:px-16">
+        <div className="grid w-full items-center gap-16 py-20 lg:grid-cols-2 lg:py-0 xl:gap-24">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -42,19 +43,19 @@ export default function Landing() {
           >
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-6xl xl:text-[4.8rem] font-black tracking-[-0.07em] leading-[0.9] uppercase italic text-white mb-5"
+              className="mb-5 text-5xl font-black uppercase italic leading-[0.9] tracking-[-0.07em] text-white md:text-6xl xl:text-[4.8rem]"
             >
               APRENDÉ
               <br />
               PROGRAMANDO
               <br />
               <span className="text-white">CON </span>
-              <span className="text-primary-650">CODE-STEP</span>
+              <span className="text-primary-500">CODE-STEP</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-lg text-zinc-600 mb-9 leading-relaxed max-w-[670px] font-material"
+              className="mb-9 max-w-[670px] text-base leading-relaxed text-zinc-400 md:text-lg"
             >
               Aprendé a programar con misiones cortas, feedback inmediato y
               progreso real.
@@ -62,9 +63,9 @@ export default function Landing() {
 
             <motion.div variants={itemVariants}>
               <Link to="/dashboard">
-                <AnimatedButton className="px-6 py-3 bg-white text-black font-black text-xs uppercase tracking-[0.12em] flex items-center gap-3 hover:bg-primary-500 transition-all duration-300">
+                <AnimatedButton className="group flex items-center gap-3 bg-white px-6 py-3 text-xs font-black uppercase tracking-[0.12em] text-black transition-all duration-300 hover:bg-primary-500 hover:scale-[1.02]">
                   <span>ENTRAR A LA PLATAFORMA</span>
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover:  translate-x-1" />
+                  <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </AnimatedButton>
               </Link>
             </motion.div>
@@ -78,9 +79,9 @@ export default function Landing() {
               ease: [0.16, 1, 0.3, 1],
               delay: 0.35,
             }}
-            className="relative w-full flex justify-center lg:justify-end"
+            className="relative flex w-full justify-center lg:justify-end"
           >
-            <div className="absolute inset-0 bg-primary-500/5 blur-[80px] rounded-3xl" />
+            <div className="absolute inset-0 rounded-3xl bg-primary-500/5 blur-[80px]" />
 
             <motion.div
               animate={{ y: [0, -10, 0] }}
